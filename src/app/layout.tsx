@@ -1,0 +1,62 @@
+import type { Metadata } from "next"
+import { JetBrains_Mono } from "next/font/google"
+import "./globals.css"
+import { Navbar } from "../components/navbar"
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-jetbrains-mono",
+})
+
+export const metadata: Metadata = {
+  metadataBase: new URL("https://kys.id0.uk"),
+  title: {
+    default: "Amit Kumar",
+    template: "%s | Amit Kumar",
+  },
+  description: "Applied AI Engineer",
+  icons: {
+    icon: "https://github.com/amitkys.png",
+  },
+  openGraph: {
+    title: "Amit Kumar",
+    description: "Applied AI Engineer",
+    url: "https://kys.id0.uk",
+    siteName: "Amit Kumar",
+    locale: "en_US",
+    type: "website",
+    images: ["https://kys.id0.uk/og/home"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    "max-video-preview": -1,
+    "max-image-preview": "large",
+    "max-snippet": -1,
+  },
+  twitter: {
+    title: "Amit Kumar",
+    card: "summary_large_image",
+    creator: "@kys",
+  },
+}
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  return (
+    <html lang="en">
+      <body
+        className={`${jetbrainsMono.variable} antialiased min-h-screen font-mono`}
+      >
+        <div className="max-w-4xl mx-auto px-5 sm:px-4 py-8">
+          <Navbar />
+          {children}
+        </div>
+      </body>
+    </html>
+  )
+}
