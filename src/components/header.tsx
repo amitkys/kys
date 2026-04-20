@@ -1,4 +1,5 @@
 import { ScrambleText } from "@/components/scramble-text"
+import Link from "next/link"
 
 export function Header() {
   return (
@@ -12,7 +13,7 @@ export function Header() {
         software developer at Vaastman Solution · Patna, india
       </p>
       <p className="text-pretty max-w-[52ch] animate-fade-in-up">
-        i&apos;m a MCA postgrad. To make a system reliable, maintainable, I spend time on architecture and desining a system.
+        i&apos;m a MCA postgrad. To make a system reliable, maintainable, I spend time on architecture and desining a system. [along with system I do not forget to design <Link href="/gallery" className="text-accent no-underline hover:underline">myselft</Link> too.]
       </p>
     </header>
   )
