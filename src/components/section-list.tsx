@@ -27,10 +27,10 @@ export function SectionList({
   showSectionBorder = true,
 }: SectionListProps) {
   return (
-    <section className={`mb-12 animate-fade-in-up ${showSectionBorder ? "pt-10 border-t border-neutral-800" : ""}`}>
+    <section className={`mb-12 animate-fade-in-up ${showSectionBorder ? "pt-10 border-t border-stone-300" : ""}`}>
       {showTitle && (
         <div className="flex items-baseline justify-between mb-6">
-          <h2 className="text-2xl font-semibold flex items-center text-white">
+          <h2 className="text-2xl font-semibold flex items-center text-foreground">
             <span className="text-accent accent-glow mr-2">*</span> {title}
           </h2>
           {viewAllHref && (
@@ -46,21 +46,21 @@ export function SectionList({
       )}
       <div className="space-y-2">
         {items.map((item) => (
-          <Link key={item.title} href={item.href} target="_blank" className="group block rounded-lg p-4 -mx-4 hover:bg-neutral-900/50">
+          <Link key={item.title} href={item.href} target="_blank" className="group block rounded-lg p-4 -mx-4 hover:bg-stone-200/60">
             <div className="flex items-start justify-between gap-4">
               <div className="min-w-0">
-                <h3 className="text-xl font-semibold text-white group-hover:text-accent transition-colors duration-200">
+                <h3 className="text-xl font-semibold text-foreground group-hover:text-accent transition-colors duration-200">
                   {item.title}
                 </h3>
-                <p className="text-sm text-gray-500 mt-1">
+                <p className="text-sm text-stone-500 mt-1">
                   {item.role}
                   {item.period && (
-                    <span className="text-gray-600"> · {item.period}</span>
+                    <span className="text-stone-400"> · {item.period}</span>
                   )}
                 </p>
-                <p className="text-gray-300 mt-2 text-pretty">{item.description}</p>
+                <p className="text-stone-600 mt-2 text-pretty">{item.description}</p>
               </div>
-              <ArrowUpRight className="w-4 h-4 mt-1.5 text-gray-600 group-hover:text-accent transition-colors shrink-0" />
+              <ArrowUpRight className="w-4 h-4 mt-1.5 text-stone-400 group-hover:text-accent transition-colors shrink-0" />
             </div>
           </Link>
         ))}

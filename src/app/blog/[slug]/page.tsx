@@ -86,7 +86,7 @@ export default async function Post({ params }: PageProps) {
       <div className="flex items-center justify-between mb-8">
         <Link
           href="/blog"
-          className="text-sm text-gray-500 hover:text-accent transition-colors duration-200"
+          className="text-sm text-stone-500 hover:text-accent transition-colors duration-200"
         >
           &larr; back
         </Link>
@@ -98,29 +98,29 @@ export default async function Post({ params }: PageProps) {
         </div>
       )}
 
-      <h1 className="text-4xl font-semibold mb-4 text-white text-balance">
+      <h1 className="text-4xl font-semibold mb-4 text-foreground text-balance">
         <span className="text-accent accent-glow mr-2">*</span>
         {post.metadata.title}
       </h1>
 
-      <div className="mb-10 flex items-center gap-3 text-sm text-gray-500">
+      <div className="mb-10 flex items-center gap-3 text-sm text-stone-500">
         <span>{formatDateLong(post.metadata.date)}</span>
         <span>&middot;</span>
         <span>{readingTime}</span>
       </div>
 
-      <article className="prose prose-invert max-w-none prose-headings:text-white prose-a:text-white hover:prose-a:underline prose-tuned-mono text-pretty">
+      <article className="prose max-w-none prose-headings:text-foreground prose-a:text-accent hover:prose-a:underline prose-tuned-mono text-pretty">
         <MDX source={post.content} />
       </article>
 
       {(prev || next) && (
-        <nav className="mt-16 border-t border-neutral-800 pt-8 grid grid-cols-2 gap-4 text-sm">
+        <nav className="mt-16 border-t border-stone-300 pt-8 grid grid-cols-2 gap-4 text-sm">
           {prev ? (
             <Link
               href={`/blog/${prev.slug}`}
-              className="group text-gray-500 hover:text-gray-300 transition-colors duration-200"
+              className="group text-stone-500 hover:text-stone-800 transition-colors duration-200"
             >
-              <span className="text-xs text-gray-600 mb-1 block">previous</span>
+              <span className="text-xs text-stone-400 mb-1 block">previous</span>
               <span className="group-hover:text-accent transition-colors duration-200">
                 &larr; {prev.metadata.title.toLowerCase()}
               </span>
@@ -131,9 +131,9 @@ export default async function Post({ params }: PageProps) {
           {next ? (
             <Link
               href={`/blog/${next.slug}`}
-              className="group text-right text-gray-500 hover:text-gray-300 transition-colors duration-200"
+              className="group text-right text-stone-500 hover:text-stone-800 transition-colors duration-200"
             >
-              <span className="text-xs text-gray-600 mb-1 block">next</span>
+              <span className="text-xs text-stone-400 mb-1 block">next</span>
               <span className="group-hover:text-accent transition-colors duration-200">
                 {next.metadata.title.toLowerCase()} &rarr;
               </span>

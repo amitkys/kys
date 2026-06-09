@@ -4,12 +4,12 @@ import Link from "next/link"
 export function Header() {
   return (
     <header className="mb-16 space-y-4">
-      <h1 className="text-5xl font-semibold tracking-tight text-white text-balance mb-4 animate-fade-in">
+      <h1 className="text-5xl font-semibold tracking-tight text-foreground text-balance mb-4 animate-fade-in">
         <span className="inline-block">
           <ScrambleText text="Amit Kumar" />
         </span>
       </h1>
-      <p className="text-gray-500 animate-fade-in">
+      <p className="text-stone-500 animate-fade-in">
         software developer at Vaastman Solution · Patna, india
       </p>
       <p className="text-pretty max-w-[52ch] animate-fade-in-up">

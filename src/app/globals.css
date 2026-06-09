@@ -5,17 +5,18 @@
   --font-mono: var(--font-jetbrains-mono), monospace;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-accent: #ff6b35;
+  --color-accent: #b85c20;
 }
 
 :root {
-  --background: #111;
-  --foreground: #d1d5db;
+  --background: #f5f0e8;
+  --foreground: #2c2416;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
+  font-weight: 500;
 }
 
 .shiki,
@@ -49,11 +50,11 @@ body {
 }
 
 .prose pre {
-  @apply overflow-x-auto border border-neutral-800 bg-[#111] my-4 rounded-sm;
+  @apply overflow-x-auto border border-stone-300 bg-[#ede8de] my-4 rounded-sm;
 }
 
 .prose code:not(pre code) {
-  @apply px-1 py-0.5 text-sm border border-gray-700 rounded text-gray-200;
+  @apply px-1 py-0.5 text-sm border border-stone-400 rounded text-stone-700;
 }
 
 .prose code:not(pre code)::before,
@@ -68,7 +69,7 @@ body {
 }
 
 .prose code span {
-  @apply font-medium text-gray-200;
+  @apply font-medium text-stone-700;
 }
 
 /* Prose typography — tuned mono for long-form reading */
@@ -100,11 +101,11 @@ body {
 
 .prose-tuned-mono :where(blockquote):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
   font-style: normal;
-  border-left-color: #ff6b35;
+  border-left-color: #b85c20;
   padding-left: 1.5em;
 }
 
 /* accent glow for * markers and accent links */
 .accent-glow {
-  text-shadow: 0 0 10px rgba(255, 107, 53, 0.2);
+  text-shadow: 0 0 10px rgba(184, 92, 32, 0.25);
 }

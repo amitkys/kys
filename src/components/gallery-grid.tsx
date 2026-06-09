@@ -42,7 +42,7 @@ export function GalleryGrid({ items }: GalleryGridProps) {
         {items.map((item, index) => (
           <figure
             key={`${item.path}-${item.date}-${index}`}
-            className="overflow-hidden rounded-xl border border-neutral-800 bg-neutral-950/60"
+            className="overflow-hidden rounded-xl border border-stone-300 bg-stone-100"
           >
             <button
               type="button"
@@ -58,9 +58,9 @@ export function GalleryGrid({ items }: GalleryGridProps) {
               />
             </button>
             <figcaption className="space-y-1 p-3">
-              <p className="text-sm text-gray-500">{item.formattedDate}</p>
+              <p className="text-sm text-stone-500">{item.formattedDate}</p>
               {item.text && (
-                <p className="text-sm text-gray-300">{item.text}</p>
+                <p className="text-sm text-stone-700">{item.text}</p>
               )}
             </figcaption>
           </figure>

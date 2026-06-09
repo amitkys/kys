@@ -30,10 +30,10 @@ export function Gallery({ items }: GalleryProps) {
   return (
     <section className="space-y-6">
       <div className="space-y-2">
-        <h1 className="text-3xl font-semibold tracking-tight text-white">
+        <h1 className="text-3xl font-semibold tracking-tight text-foreground">
           amitkys gallery
         </h1>
-        <p className="text-sm text-gray-500">
+        <p className="text-sm text-stone-500">
           moments from the gallery archive
         </p>
       </div>

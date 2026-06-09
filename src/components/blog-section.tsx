@@ -12,9 +12,9 @@ const posts = getPublishedPosts()
 
 export function BlogSection() {
   return (
-    <section className="mb-12 pt-10 border-t border-neutral-800 animate-fade-in-up">
+    <section className="mb-12 pt-10 border-t border-stone-300 animate-fade-in-up">
       <div className="flex items-baseline justify-between mb-6">
-        <h2 className="text-2xl font-semibold flex items-center text-white">
+        <h2 className="text-2xl font-semibold flex items-center text-foreground">
           <span className="text-accent accent-glow mr-2">*</span>
           blog
         </h2>
@@ -33,10 +33,10 @@ export function BlogSection() {
             href={`/blog/${post.slug}`}
             className="group flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-4"
           >
-            <span className="text-sm text-gray-500 sm:w-28 shrink-0 tabular-nums">
+            <span className="text-sm text-stone-500 sm:w-28 shrink-0 tabular-nums">
               {formatDate(post.metadata.date)}
             </span>
-            <span className="text-gray-200 group-hover:text-accent transition-colors duration-200">
+            <span className="text-stone-700 group-hover:text-accent transition-colors duration-200">
               {post.metadata.title.toLowerCase()}
             </span>
           </Link>

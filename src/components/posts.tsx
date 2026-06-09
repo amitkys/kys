@@ -74,8 +74,8 @@ export function Posts({ posts }: PostsProps) {
   return (
     <>
       {isSearching && (
-        <div className="fixed bottom-4 left-4 right-4 max-w-2xl mx-auto bg-black/50 backdrop-blur-xs border border-gray-800 p-2">
-          <div className="flex items-center text-gray-400">
+        <div className="fixed bottom-4 left-4 right-4 max-w-2xl mx-auto bg-stone-100/90 backdrop-blur-xs border border-stone-300 p-2">
+          <div className="flex items-center text-stone-600">
             <span className="text-accent mr-2">/</span>
             <input
               type="text"

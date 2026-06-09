@@ -21,12 +21,12 @@ export default function NotFound() {
           `}
         </pre>
         <p className="sm:hidden text-6xl font-bold text-accent">404</p>
-        <p className="text-gray-400">
+        <p className="text-stone-500">
           looks like you&apos;ve wandered into uncharted territory
         </p>
         <Link
           href="/"
-          className="inline-block text-gray-400 hover:text-accent transition-colors"
+          className="inline-block text-stone-500 hover:text-accent transition-colors"
         >
           return home
         </Link>
