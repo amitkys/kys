@@ -5,6 +5,11 @@ export type GalleryItem = {
   path: string
   date: string
   text?: string
+  spotify?: {
+    trackId: string
+    songName: string
+    themeColor?: string
+  }
 }
 
 type GalleryProps = {

@@ -2,6 +2,11 @@
   {
     "path": "1_20apr26.jpg",
     "date": "2026-04-20",
-    "text": "shooted it while listening 'Less than zero' by the weeknd"
+    "text": "shooted it while listening 'Less than zero' by the weeknd",
+    "spotify": {
+      "trackId": "2D4dV2KXDTszzJ3p3cFqhA",
+      "songName": "Less than zero",
+      "themeColor": "#0f1c1f"
+    }
   }
 ]
