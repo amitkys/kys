@@ -1,12 +1,13 @@
 import { ScrambleText } from "@/components/scramble-text"
 import Link from "next/link"
+import { siteConfig } from "@/config/site"
 
 export function Header() {
   return (
     <header className="mb-16 space-y-4">
       <h1 className="text-5xl font-semibold tracking-tight text-foreground text-balance mb-4 animate-fade-in">
         <span className="inline-block">
-          <ScrambleText text="Amit Kumar" />
+          <ScrambleText text={siteConfig.name} />
         </span>
       </h1>
       <p className="text-stone-500 animate-fade-in">

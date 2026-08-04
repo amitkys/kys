@@ -1,12 +1,5 @@
 import Link from "next/link"
-
-const links = [
-  { title: "email", href: "mailto:amitkys59@gmail.com" },
-  { title: "x.com", href: "https://x.com/amitkys" },
-  { title: "github", href: "https://github.com/amitkys" },
-  { title: "linkedin", href: "https://www.linkedin.com/in/amit-kumar-895023196/" },
-  // { title: "book a call", href: "https://cal.com/nexxel" },
-]
+import { socialLinks } from "@/config/site"
 
 export function LinksSection() {
   return (
@@ -15,7 +8,7 @@ export function LinksSection() {
         <span className="text-accent accent-glow mr-2">*</span> elsewhere
       </h2>
       <div className="flex flex-wrap gap-x-6 gap-y-3 text-sm">
-        {links.map((link, index) => (
+        {socialLinks.map((link, index) => (
           <Link
             key={index}
             href={link.href}

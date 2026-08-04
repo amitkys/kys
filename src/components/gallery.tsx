@@ -1,5 +1,6 @@
 import { formatDate } from "@/lib/utils"
 import { GalleryGrid } from "@/components/gallery-grid"
+import { siteConfig } from "@/config/site"
 
 export type GalleryItem = {
   path: string
@@ -36,7 +37,7 @@ export function Gallery({ items }: GalleryProps) {
     <section className="space-y-6">
       <div className="space-y-2">
         <h1 className="text-3xl font-semibold tracking-tight text-foreground">
-          amitkys gallery
+          {siteConfig.shortName} gallery
         </h1>
         <p className="text-sm text-stone-500">
           moments from the gallery archive

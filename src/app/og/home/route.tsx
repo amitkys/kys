@@ -1,4 +1,5 @@
 import { ImageResponse } from "next/og"
+import { siteConfig } from "@/config/site"
 
 export const runtime = "edge"
 
@@ -22,7 +23,7 @@ async function loadGoogleFont(font: string, text: string) {
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url)
   const title = searchParams.get("title")
-  const text = title ? `amitkys • ${title}` : "amitkys • home"
+  const text = title ? `${siteConfig.shortName} • ${title}` : `${siteConfig.shortName} • home`
 
   return new ImageResponse(
     (
@@ -41,7 +42,7 @@ export async function GET(request: Request) {
         }}
       >
         <img
-          src="https://github.com/amitkys.png"
+          src={siteConfig.avatarUrl}
           width="80"
           height="80"
           style={{

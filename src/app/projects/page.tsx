@@ -2,6 +2,7 @@ import { ScrambleText } from "@/components/scramble-text"
 import { ProjectCard } from "@/components/project-card"
 import { Metadata } from "next"
 import { projects } from "./lib/project-list"
+import { getOgHomeUrl } from "@/config/site"
 
 export default function ProjectsPage() {
   return (
@@ -32,7 +33,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: [
       {
-        url: "https://kys.id0.uk/og/home?title=projects",
+        url: getOgHomeUrl("projects"),
       },
     ],
   },

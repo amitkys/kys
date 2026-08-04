@@ -2,6 +2,7 @@ import { ScrambleText } from "@/components/scramble-text"
 import { SectionList } from "@/components/section-list"
 import { workItems } from "@/app/work/lib/work-items"
 import { Metadata } from "next"
+import { getOgHomeUrl } from "@/config/site"
 
 export default function WorkPage() {
   return (
@@ -26,7 +27,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: [
       {
-        url: "https://kys.id0.uk/og/home?title=work",
+        url: getOgHomeUrl("work"),
       },
     ],
   },

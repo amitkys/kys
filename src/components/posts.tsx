@@ -84,7 +84,7 @@ export function Posts({ posts }: PostsProps) {
                 setSearchQuery(e.target.value)
                 setSelectedIndex(0)
               }}
-              className="flex-1 bg-transparent outline-hidden"
+              className="flex-1 bg-transparent outline-hidden text-foreground placeholder:text-stone-400"
               autoFocus
               placeholder="search posts..."
               aria-label="Search posts"

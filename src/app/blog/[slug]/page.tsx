@@ -8,6 +8,7 @@ import {
 } from "@/lib/blog"
 import { formatDateLong } from "@/lib/utils"
 import type { Metadata } from "next"
+import { siteConfig, getBlogPostUrl, getOgBlogUrl } from "@/config/site"
 
 type PageProps = {
   params: Promise<{ slug: string }>
@@ -30,10 +31,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata 
       description: post.metadata.description,
       publishedTime,
       type: "article",
-      url: `https://kys.id0.uk/blog/${post.slug}`,
+      url: getBlogPostUrl(post.slug),
       images: [
         {
-          url: `https://kys.id0.uk/og/blog?title=${post.metadata.title}`,
+          url: getOgBlogUrl(post.metadata.title),
         },
       ],
     },
@@ -41,9 +42,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata 
       title: post.metadata.title,
       description: post.metadata.description,
       card: "summary_large_image",
-      creator: "@kys",
+      creator: siteConfig.twitterHandle,
       images: [
-        `https://kys.id0.uk/og/blog?title=${post.metadata.title}&top=${publishedTime}`,
+        getOgBlogUrl(post.metadata.title, publishedTime),
       ],
     },
   }
@@ -72,12 +73,11 @@ export default async function Post({ params }: PageProps) {
             datePublished: post.metadata.date,
             dateModified: post.metadata.date,
             description: post.metadata.description,
-            image: `https://kys.id0.uk/og/blog?title=${post.metadata.title
-              }&top=${formatDateLong(post.metadata.date)}`,
-            url: `https://kys.id0.uk/blog/${post.slug}`,
+            image: getOgBlogUrl(post.metadata.title, formatDateLong(post.metadata.date)),
+            url: getBlogPostUrl(post.slug),
             author: {
               "@type": "Person",
-              name: "Amit Kumar",
+              name: siteConfig.name,
             },
           }),
         }}
@@ -93,7 +93,7 @@ export default async function Post({ params }: PageProps) {
       </div>
 
       {post.metadata.draft && (
-        <div className="mb-6 px-4 py-3 bg-yellow-500/10 border border-yellow-500/20 rounded-sm text-yellow-500 text-sm">
+        <div className="mb-6 px-4 py-3 bg-amber-500/10 border border-amber-500/20 rounded-sm text-amber-700 text-sm">
           This post is a draft and is not listed publicly.
         </div>
       )}
@@ -120,7 +120,7 @@ export default async function Post({ params }: PageProps) {
               href={`/blog/${prev.slug}`}
               className="group text-stone-500 hover:text-stone-800 transition-colors duration-200"
             >
-              <span className="text-xs text-stone-400 mb-1 block">previous</span>
+              <span className="text-xs text-stone-500 mb-1 block">previous</span>
               <span className="group-hover:text-accent transition-colors duration-200">
                 &larr; {prev.metadata.title.toLowerCase()}
               </span>
@@ -133,7 +133,7 @@ export default async function Post({ params }: PageProps) {
               href={`/blog/${next.slug}`}
               className="group text-right text-stone-500 hover:text-stone-800 transition-colors duration-200"
             >
-              <span className="text-xs text-stone-400 mb-1 block">next</span>
+              <span className="text-xs text-stone-500 mb-1 block">next</span>
               <span className="group-hover:text-accent transition-colors duration-200">
                 {next.metadata.title.toLowerCase()} &rarr;
               </span>

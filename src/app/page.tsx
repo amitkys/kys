@@ -20,7 +20,7 @@ export default function HomePage() {
   return (
     <>
       <Header />
-      {/* <BlogSection /> */}
+      <BlogSection />
       {/* show "all work" link only if there is more work than featured ones (3) */}
       <SectionList
         title="work"

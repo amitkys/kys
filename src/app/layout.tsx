@@ -3,6 +3,8 @@ import { JetBrains_Mono } from "next/font/google"
 import "./globals.css"
 import { Navbar } from "../components/navbar"
 
+import { siteConfig, getOgHomeUrl } from "@/config/site"
+
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   display: "swap",
@@ -10,23 +12,23 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://kys.id0.uk"),
+  metadataBase: new URL(siteConfig.url),
   title: {
-    default: "Amit Kumar",
-    template: "%s | Amit Kumar",
+    default: siteConfig.name,
+    template: siteConfig.titleTemplate,
   },
-  description: "Applied AI Engineer",
+  description: siteConfig.description,
   icons: {
-    icon: "https://github.com/amitkys.png",
+    icon: siteConfig.avatarUrl,
   },
   openGraph: {
-    title: "Amit Kumar",
-    description: "Applied AI Engineer",
-    url: "https://kys.id0.uk",
-    siteName: "Amit Kumar",
+    title: siteConfig.name,
+    description: siteConfig.description,
+    url: siteConfig.url,
+    siteName: siteConfig.name,
     locale: "en_US",
     type: "website",
-    images: ["https://kys.id0.uk/og/home"],
+    images: [getOgHomeUrl()],
   },
   robots: {
     index: true,
@@ -36,9 +38,9 @@ export const metadata: Metadata = {
     "max-snippet": -1,
   },
   twitter: {
-    title: "Amit Kumar",
+    title: siteConfig.name,
     card: "summary_large_image",
-    creator: "@kys",
+    creator: siteConfig.twitterHandle,
   },
 }
 
